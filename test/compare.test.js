@@ -82,7 +82,7 @@ describe('Deep Compare testing', () => {
 
     it('13. Expects objects is to be equal', () => {
         expect(
-            deepCompare({a: 1, b: 2, c: 6}, {a: 1, b: 2, c: 6}),
+            deepCompare({a: 1, c: null, b: 2}, {a: 1, b: 2, c: null}),
         ).to.equal(true);    
     });
 
