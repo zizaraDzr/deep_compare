@@ -103,4 +103,22 @@ describe('Deep Compare testing', () => {
             ),
         ).to.equal(false);    
     });
+
+    it('16. Expects deep objects is to be equal', () => {
+        expect(
+            deepCompare(
+                [{a: 1, b: {g: 6, f: [1, {g: 7}, 2], j: 6}, c: 6, p: [] }],
+                [{a: 1, b: {g: 6, f: [1, {g: 7}, 2], j: 6}, c: 6, p: [] }]
+            ),
+        ).to.equal(true);    
+    });
+
+    it('17. Expects deep objects is not to be equal', () => {
+        expect(
+            deepCompare(
+                [{a: 1, b: {g: 6, f: [1, {g: 7}, 2], j: 6}, c: 6, p: [1] }],
+                [{a: 1, b: {g: 6, f: [1, {g: 7}, 2], j: 6}, c: 6, p: [] }]
+            ),
+        ).to.equal(false);    
+    });
 });
